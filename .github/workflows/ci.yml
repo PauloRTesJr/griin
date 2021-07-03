@@ -1,4 +1,4 @@
-name: Paraplu Web CI
+name: Griin App
 on: [push]
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
