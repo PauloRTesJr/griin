@@ -1,16 +1,18 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'griin-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
+  @Input()
+  text!: string;
 
-  constructor() { }
+  @Input()
+  backgroundColor = '#EEEEEE';
 
-  ngOnInit(): void {
-  }
-
+  @Input()
+  color = '#424242';
 }

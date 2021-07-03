@@ -7,8 +7,11 @@ export default {
   decorators: [
     moduleMetadata({
       imports: [],
-    })
+    }),
   ],
+  parameters: {
+    layout: 'centered',
+  },
 } as Meta<ButtonComponent>;
 
 const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
@@ -16,7 +19,9 @@ const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
   props: args,
 });
 
-
 export const Primary = Template.bind({});
 Primary.args = {
-}
+  text: 'Hamburguer',
+  backgroundColor: '#DA291C',
+  color: '#FFFFFF',
+};
