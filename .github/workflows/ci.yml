@@ -1,0 +1,44 @@
+name: Paraplu Web CI
+on: [push]
+env:
+  NX_CLOUD_DISTRIBUTED_EXECUTION: 'true'
+  NX_BRANCH: ${{ github.event.number }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build commit
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1.4.5
+      - uses: MansaGroup/nrwl-nx-action@v2.0.4
+        with:
+          targets: lint
+          all: 'true'
+          nxCloud: 'true'
+          parallel: 'true'
+      - uses: MansaGroup/nrwl-nx-action@v2.0.4
+        with:
+          targets: test
+          all: 'true'
+          nxCloud: 'true'
+          parallel: 'true'
+      - uses: MansaGroup/nrwl-nx-action@v2.0.4
+        with:
+          targets: build
+          all: 'true'
+          nxCloud: 'true'
+          parallel: 'true'
+      - run: npx @nrwl/nx-cloud stop-all-agents
+  agent1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npx @nrwl/nx-cloud start-agent
+  agent2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1.4.5
+      - run: npx @nrwl/nx-cloud start-agent
