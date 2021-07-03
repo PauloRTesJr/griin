@@ -1,4 +1,9 @@
-import { moduleMetadata, Story, Meta } from '@storybook/angular';
+import {
+  moduleMetadata,
+  Story,
+  Meta,
+  componentWrapperDecorator,
+} from '@storybook/angular';
 import { InputComponent } from './input.component';
 
 export default {
@@ -8,6 +13,9 @@ export default {
     moduleMetadata({
       imports: [],
     }),
+    componentWrapperDecorator(
+      (story) => `<div style="width: 40vw">${story}</div>`
+    ),
   ],
   parameters: {
     layout: 'centered',
