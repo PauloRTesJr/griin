@@ -1,6 +1,33 @@
 {
   "version": 1,
   "projects": {
+    "features-firebase": {
+      "projectType": "library",
+      "root": "libs/features/firebase",
+      "sourceRoot": "libs/features/firebase/src",
+      "prefix": "griin",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/features/firebase"
+          ],
+          "options": {
+            "jestConfig": "libs/features/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/features/firebase/src/**/*.ts",
+              "libs/features/firebase/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "griin-backoffice": {
       "projectType": "application",
       "root": "apps/griin-backoffice",
@@ -9,7 +36,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/griin-backoffice",
             "index": "apps/griin-backoffice/src/index.html",
@@ -21,7 +50,9 @@
               "apps/griin-backoffice/src/favicon.ico",
               "apps/griin-backoffice/src/assets"
             ],
-            "styles": ["apps/griin-backoffice/src/styles.scss"],
+            "styles": [
+              "apps/griin-backoffice/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -86,11 +117,17 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/griin-backoffice"],
+          "outputs": [
+            "coverage/apps/griin-backoffice"
+          ],
           "options": {
             "jestConfig": "apps/griin-backoffice/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
@@ -115,7 +152,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/griin-backoffice-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/griin-backoffice-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -128,7 +167,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/ui"],
+          "outputs": [
+            "dist/libs/ui"
+          ],
           "options": {
             "project": "libs/ui/ng-package.json"
           },
@@ -144,7 +185,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui"],
+          "outputs": [
+            "coverage/libs/ui"
+          ],
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
@@ -153,7 +196,10 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
+            "lintFilePatterns": [
+              "libs/ui/src/**/*.ts",
+              "libs/ui/src/**/*.html"
+            ]
           }
         },
         "storybook": {
@@ -173,7 +219,9 @@
         },
         "build-storybook": {
           "builder": "@nrwl/storybook:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/ui",
@@ -210,13 +258,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/ui-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/ui-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
     }
   },
   "cli": {
+    "analytics": "48793ab2-27c6-441e-ad3d-9204ca66a912",
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {

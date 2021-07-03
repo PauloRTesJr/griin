@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@griin/features/firebase": ["libs/features/firebase/src/index.ts"],
       "@griin/ui": ["libs/ui/src/index.ts"]
     }
   },

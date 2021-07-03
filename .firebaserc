@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "griin-develop": {
+      "hosting": {
+        "griin-backoffice": [
+          "griin-develop"
+        ]
+      }
+    }
+  }
+}

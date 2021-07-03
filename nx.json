@@ -30,6 +30,9 @@
     ]
   },
   "projects": {
+    "features-firebase": {
+      "tags": []
+    },
     "griin-backoffice": {
       "tags": []
     },
