@@ -30,6 +30,9 @@
     ]
   },
   "projects": {
+    "features-login": {
+      "tags": []
+    },
     "griin-backoffice": {
       "tags": []
     },
