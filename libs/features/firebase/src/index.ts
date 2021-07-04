@@ -1,1 +1,1 @@
-export * from './lib/features-firebase.module';
+export * from './lib/firebase.module';
