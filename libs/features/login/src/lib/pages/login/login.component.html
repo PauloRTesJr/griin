@@ -1,10 +1,18 @@
 <div class="container">
-  <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
-    <griin-input [label]="'Email'" formControlName="email"></griin-input>
-    <griin-input [label]="'Password'" formControlName="password"></griin-input>
+  <form class="form-container" [formGroup]="form" (ngSubmit)="onFormSubmit()">
+    <griin-input
+      [color]="theme.PrimaryColor"
+      [label]="'Email'"
+      formControlName="email"
+    ></griin-input>
+    <griin-input
+      [color]="theme.PrimaryColor"
+      [label]="'Password'"
+      formControlName="password"
+    ></griin-input>
     <griin-button
-      [color]="'white'"
-      backgroundColor="red"
+      [color]="theme.FontLight"
+      [backgroundColor]="theme.PrimaryColor"
       text="Enviar"
     ></griin-button>
   </form>
