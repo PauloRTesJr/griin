@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { UiModule } from '@griin/ui';
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
@@ -8,9 +9,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
-    })
-    .compileComponents();
+      imports: [UiModule, ReactiveFormsModule],
+      declarations: [LoginComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

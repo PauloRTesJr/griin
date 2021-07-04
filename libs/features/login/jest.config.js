@@ -1,5 +1,6 @@
 module.exports = {
   displayName: 'features-login',
+  testRunner: 'jest-jasmine2',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
