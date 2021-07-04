@@ -1,9 +1,11 @@
-<div class="input" [style]="'--selected-color:' + color">
-  <input
-    class="input__field"
-    type="text"
-    placeholder=""
-    (keypress)="onValueChange($event)"
-  />
-  <span class="input__label">{{ label }}</span>
+<div class="input-container">
+  <label class="input" [style]="'--selected-color:' + color">
+    <input
+      class="input__field"
+      type="text"
+      placeholder=" "
+      (keypress)="onValueChange($event)"
+    />
+    <span class="input__label">{{ label }}</span>
+  </label>
 </div>

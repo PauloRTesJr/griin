@@ -1,40 +1,45 @@
-.input {
-  position: relative;
+.input-container {
+  margin: 1rem 0;
   width: 100%;
-
-  &__label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: calc(0.5rem * 0.75) calc(0.5rem * 0.5);
-    margin: calc(0.5rem * 0.75 + 3px) calc(2rem * 0.5);
-    white-space: nowrap;
-    transform: translate(0, 0);
-    transform-origin: 0 0;
-    background: white;
-    transition: transform 120ms ease-in;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  &__field {
-    box-sizing: border-box;
-    display: block;
+  .input {
+    position: relative;
     width: 100%;
-    border: 3px solid black;
-    padding: calc(0.5rem * 1.5) 0.5rem;
-    color: black;
-    background: transparent;
-    border-radius: 4px;
 
-    &:focus {
-      border: 3px solid var(--selected-color);
+    &__label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: calc(0.5rem * 0.75) calc(0.5rem * 0.5);
+      margin: calc(0.5rem * 0.75 + 3px) calc(2rem * 0.5);
+      white-space: nowrap;
+      transform: translate(0, 0);
+      transform-origin: 0 0;
+      background: transparent;
+      transition: transform 120ms ease-in;
+      font-weight: bold;
+      line-height: 1.2;
     }
+    &__field {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      border: 3px solid black;
+      padding: calc(0.5rem * 1.5) 0.5rem;
+      color: black;
+      background: transparent;
+      border-radius: 4px;
 
-    &:focus,
-    &:not(:placeholder-shown) {
-      & + .input__label {
-        transform: translate(0.25rem, -65%) scale(0.8);
-        color: var(--selected-color);
+      &:focus {
+        border: 3px solid var(--selected-color);
+      }
+
+      &:focus,
+      &:not(:placeholder-shown) {
+        & + .input__label {
+          transform: translate(0.25rem, -65%) scale(0.8);
+          color: var(--selected-color);
+          background: white;
+        }
       }
     }
   }

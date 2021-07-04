@@ -1,6 +1,7 @@
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
     <griin-input [label]="'Email'" formControlName="email"></griin-input>
+    <griin-input [label]="'Password'" formControlName="password"></griin-input>
     <griin-button
       [color]="'white'"
       backgroundColor="red"
