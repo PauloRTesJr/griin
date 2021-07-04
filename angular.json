@@ -9,9 +9,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/features/firebase"
-          ],
+          "outputs": ["coverage/libs/features/firebase"],
           "options": {
             "jestConfig": "libs/features/firebase/jest.config.js",
             "passWithNoTests": true
@@ -28,6 +26,47 @@
         }
       }
     },
+    "features-login": {
+      "projectType": "library",
+      "root": "libs/features/login",
+      "sourceRoot": "libs/features/login/src",
+      "prefix": "griin",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/features/login"],
+          "options": {
+            "project": "libs/features/login/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/features/login/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/features/login/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/features/login"],
+          "options": {
+            "jestConfig": "libs/features/login/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/features/login/src/**/*.ts",
+              "libs/features/login/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "griin-backoffice": {
       "projectType": "application",
       "root": "apps/griin-backoffice",
@@ -36,9 +75,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/griin-backoffice",
             "index": "apps/griin-backoffice/src/index.html",
@@ -50,9 +87,7 @@
               "apps/griin-backoffice/src/favicon.ico",
               "apps/griin-backoffice/src/assets"
             ],
-            "styles": [
-              "apps/griin-backoffice/src/styles.scss"
-            ],
+            "styles": ["apps/griin-backoffice/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -117,9 +152,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/griin-backoffice"
-          ],
+          "outputs": ["coverage/apps/griin-backoffice"],
           "options": {
             "jestConfig": "apps/griin-backoffice/jest.config.js",
             "passWithNoTests": true
@@ -152,9 +185,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/griin-backoffice-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/griin-backoffice-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -167,9 +198,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/ui"
-          ],
+          "outputs": ["dist/libs/ui"],
           "options": {
             "project": "libs/ui/ng-package.json"
           },
@@ -185,9 +214,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ui"
-          ],
+          "outputs": ["coverage/libs/ui"],
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
@@ -196,10 +223,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/ui/src/**/*.ts",
-              "libs/ui/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
           }
         },
         "storybook": {
@@ -219,9 +243,7 @@
         },
         "build-storybook": {
           "builder": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/ui",
@@ -258,9 +280,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/ui-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/ui-e2e/**/*.{js,ts}"]
           }
         }
       }
