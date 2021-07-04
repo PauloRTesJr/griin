@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'griin-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  form = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
-  constructor() { }
-
-  ngOnInit(): void {
+  onFormSubmit() {
+    console.log(this.form);
   }
-
 }

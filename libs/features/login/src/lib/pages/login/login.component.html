@@ -1,1 +1,10 @@
-<p>login works!</p>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+    <griin-input [label]="'Email'" formControlName="email"></griin-input>
+    <griin-button
+      [color]="'white'"
+      backgroundColor="red"
+      text="Enviar"
+    ></griin-button>
+  </form>
+</div>
