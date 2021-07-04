@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: () =>
-      import('@griin/features/login').then((m) => m.LoginModule),
+    // path: 'login',
+    // loadChildren: () =>
+    //   import('@griin/features/login').then((m) => m.LoginModule),
   },
 ];
 
