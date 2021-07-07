@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #eeeeee;
+
+  .form-container {
+    background-color: #ffffff;
+    padding: 3rem;
+    width: 90vw;
+    max-width: 600px;
+    border-radius: 1rem;
+  }
+}
