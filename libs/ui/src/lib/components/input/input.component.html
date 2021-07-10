@@ -2,7 +2,7 @@
   <label class="input" [style]="'--selected-color:' + color">
     <input
       class="input__field"
-      type="text"
+      [attr.type]="type"
       placeholder=" "
       (keypress)="onValueChange($event)"
     />
