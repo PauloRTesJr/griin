@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { select, Store, Action } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import * as UserActions from './user.actions';
-import * as UserFeature from './user.reducer';
 import * as UserSelectors from './user.selectors';
 
 @Injectable()
@@ -12,8 +11,6 @@ export class UserFacade {
    * and expose them as observables through the facade.
    */
   loaded$ = this.store.pipe(select(UserSelectors.getUserLoaded));
-  allUser$ = this.store.pipe(select(UserSelectors.getAllUser));
-  selectedUser$ = this.store.pipe(select(UserSelectors.getSelected));
 
   constructor(private readonly store: Store) {}
 
@@ -23,5 +20,9 @@ export class UserFacade {
    */
   init() {
     this.store.dispatch(UserActions.init());
+  }
+
+  loginUser(email: string, password: string) {
+    this.store.dispatch(UserActions.loginRequest({ email, password }));
   }
 }

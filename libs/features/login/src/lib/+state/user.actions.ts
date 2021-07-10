@@ -1,14 +1,23 @@
+import { UserCredential } from '@griin/ui';
 import { createAction, props } from '@ngrx/store';
-import { UserEntity } from './user.models';
 
 export const init = createAction('[User Page] Init');
 
-export const loadUserSuccess = createAction(
-  '[User/API] Load User Success',
-  props<{ user: UserEntity[] }>()
+export const actionType = {
+  loginRequest: '[User/API] Login Request',
+};
+
+export const loginSuccess = createAction(
+  '[User/API] Login Success',
+  props<{ userCredential: UserCredential }>()
 );
 
-export const loadUserFailure = createAction(
-  '[User/API] Load User Failure',
-  props<{ error: any }>()
+export const loginFailure = createAction(
+  '[User/API] Login Failure',
+  props<{ error: string | null }>()
+);
+
+export const loginRequest = createAction(
+  actionType.loginRequest,
+  props<{ email: string; password: string }>()
 );

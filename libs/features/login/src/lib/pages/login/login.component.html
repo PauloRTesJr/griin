@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="form-container" [formGroup]="form" (ngSubmit)="onFormSubmit()">
+  <form class="form-container" [formGroup]="form">
     <img src="assets/logo.svg" class="logo" />
     <griin-input
       [color]="theme.PrimaryColor"
@@ -14,7 +14,8 @@
     <griin-button
       [color]="theme.FontLight"
       class="form-button"
-      [backgroundColor]="theme.BackgroundColor"
+      [backgroundColor]="theme.PrimaryColor"
+      (click)="onFormSubmit()"
       text="Enviar"
     ></griin-button>
   </form>
