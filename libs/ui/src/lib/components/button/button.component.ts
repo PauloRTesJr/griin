@@ -15,4 +15,10 @@ export class ButtonComponent {
 
   @Input()
   color = '#424242';
+
+  @Input()
+  icon: string | null = null;
+
+  @Input()
+  iconColor = '#424242';
 }

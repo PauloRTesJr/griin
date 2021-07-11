@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Theme } from '@griin/ui';
 import { UserFacade } from '../../+state/user.facade';
+import { mdiGoogle } from '@mdi/js';
 
 @Component({
   selector: 'griin-login',
@@ -10,6 +11,7 @@ import { UserFacade } from '../../+state/user.facade';
 })
 export class LoginComponent {
   theme = Theme;
+  googleIcon = mdiGoogle;
   form = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
@@ -18,7 +20,6 @@ export class LoginComponent {
   constructor(private userFacade: UserFacade) {}
 
   onFormSubmit() {
-    console.log(this.form);
     const { email, password } = this.form.value;
     this.userFacade.loginUser(email, password);
   }

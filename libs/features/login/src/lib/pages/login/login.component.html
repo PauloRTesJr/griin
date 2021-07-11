@@ -4,14 +4,22 @@
     <griin-input
       [color]="theme.PrimaryColor"
       [label]="'Email'"
-      formControlName="email"
+      [control]="form.get('email')"
     ></griin-input>
     <griin-input
       [color]="theme.PrimaryColor"
       [label]="'Password'"
       type="password"
-      formControlName="password"
+      [control]="form.get('password')"
     ></griin-input>
+    <griin-button
+      [color]="theme.FontLight"
+      class="form-button"
+      [backgroundColor]="'#4285F4'"
+      text="Google"
+      [icon]="googleIcon"
+      [iconColor]="theme.FontLight"
+    ></griin-button>
     <griin-button
       [color]="theme.FontLight"
       class="form-button"

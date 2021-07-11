@@ -4,7 +4,7 @@
       class="input__field"
       [attr.type]="type"
       placeholder=" "
-      (keypress)="onValueChange($event)"
+      [formControl]="setFormControl()"
     />
     <span class="input__label">{{ label }}</span>
   </label>

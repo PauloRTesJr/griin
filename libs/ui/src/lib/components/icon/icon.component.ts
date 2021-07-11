@@ -11,7 +11,7 @@ export class IconComponent {
   icon = mdiAlert;
 
   @Input()
-  size = 200;
+  size = '1rem';
 
   @Input()
   color = '#424242';

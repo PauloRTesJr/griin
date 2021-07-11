@@ -1,6 +1,6 @@
 .button-container {
   padding: 0.85rem;
-  border-radius: 1rem;
+  border-radius: 4px;
   transition: 0.25s ease;
   display: flex;
   justify-content: center;
@@ -11,5 +11,9 @@
 
   &:active {
     opacity: 0.5;
+  }
+
+  .icon {
+    margin-right: 0.5rem;
   }
 }

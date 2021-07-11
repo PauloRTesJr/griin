@@ -3,5 +3,11 @@
   [style.background]="backgroundColor"
   [style.color]="color"
 >
+  <griin-icon
+    *ngIf="icon"
+    [icon]="icon"
+    [color]="iconColor"
+    class="icon"
+  ></griin-icon>
   {{ text }}
 </div>
