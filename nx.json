@@ -30,6 +30,9 @@
     ]
   },
   "projects": {
+    "features-dashboard": {
+      "tags": []
+    },
     "features-login": {
       "tags": []
     },

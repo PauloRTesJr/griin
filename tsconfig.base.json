@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@griin/features/dashboard": ["libs/features/dashboard/src/index.ts"],
       "@griin/features/login": ["libs/features/login/src/index.ts"],
       "@griin/ui": ["libs/ui/src/index.ts"]
     }

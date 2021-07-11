@@ -8,9 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { storageSyncReducer } from './storage';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,7 +20,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreModule.forRoot(
       {},
       {
-        metaReducers: !environment.production ? [] : [],
+        metaReducers: [storageSyncReducer],
         runtimeChecks: {
           strictActionImmutability: true,
           strictStateImmutability: true,

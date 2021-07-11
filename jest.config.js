@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/griin-backoffice',
     '<rootDir>/libs/ui',
     '<rootDir>/libs/features/login',
+    '<rootDir>/libs/features/dashboard',
   ],
 };

@@ -14,14 +14,6 @@ export class UserFacade {
 
   constructor(private readonly store: Store) {}
 
-  /**
-   * Use the initialization action to perform one
-   * or more tasks in your Effects.
-   */
-  init() {
-    this.store.dispatch(UserActions.init());
-  }
-
   loginUser(email: string, password: string) {
     this.store.dispatch(UserActions.loginRequest({ email, password }));
   }
