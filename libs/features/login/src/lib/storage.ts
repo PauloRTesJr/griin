@@ -11,4 +11,5 @@ function localStorageSyncReducer(reducer: ActionReducer<UserState>): ActionReduc
   })(reducer);
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const metaReducers: Array<MetaReducer<UserState, any>> = [localStorageSyncReducer];
