@@ -1,4 +1,3 @@
-import { UserCredential } from '@griin/ui';
 import { createAction, props } from '@ngrx/store';
 
 export const actionType = {
@@ -9,15 +8,15 @@ export const actionType = {
 
 export const loginSuccess = createAction(
   actionType.loginSuccess,
-  props<{ userCredential: UserCredential }>()
+  props<{ userUid: string | null, userEmail: string | null; }>()
 );
 
 export const loginFailure = createAction(
   actionType.loginFailure,
-  props<{ error: string | null }>()
+  props<{ error: string | null; }>()
 );
 
 export const loginRequest = createAction(
   actionType.loginRequest,
-  props<{ email: string; password: string }>()
+  props<{ email: string; password: string; }>()
 );

@@ -9,6 +9,7 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromUser from './+state/user.reducer';
 import { UserEffects } from './+state/user.effects';
 import { UserFacade } from './+state/user.facade';
+import { metaReducers } from './storage';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -19,9 +20,9 @@ import { UserFacade } from './+state/user.facade';
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: LoginComponent },
     ]),
-    StoreModule.forFeature(fromUser.USER_FEATURE_KEY, fromUser.reducer),
+    StoreModule.forFeature(fromUser.USER_FEATURE_KEY, fromUser.reducer, { metaReducers }),
     EffectsModule.forFeature([UserEffects]),
   ],
   providers: [UserFacade],
 })
-export class LoginModule {}
+export class LoginModule { }

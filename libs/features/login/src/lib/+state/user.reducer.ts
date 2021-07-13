@@ -1,4 +1,3 @@
-import { UserCredential } from '@griin/ui';
 import { createReducer, on, Action } from '@ngrx/store';
 
 import * as UserActions from './user.actions';
@@ -6,14 +5,16 @@ import * as UserActions from './user.actions';
 export const USER_FEATURE_KEY = 'user';
 
 export interface UserState {
-  userCredential: UserCredential | null;
+  userUid: string | null;
+  userEmail: string | null;
   loaded: boolean;
   error?: string | null;
 }
 
 export const initialState: UserState = {
   loaded: false,
-  userCredential: null,
+  userUid: null,
+  userEmail: null
 };
 
 const userReducer = createReducer(
@@ -23,10 +24,11 @@ const userReducer = createReducer(
     loaded: false,
     error: null,
   })),
-  on(UserActions.loginSuccess, (state, { userCredential }) => ({
+  on(UserActions.loginSuccess, (state, { userUid, userEmail }) => ({
     ...state,
     loaded: true,
-    userCredential,
+    userUid,
+    userEmail
   })),
   on(UserActions.loginFailure, (state, { error }) => ({ ...state, error }))
 );
