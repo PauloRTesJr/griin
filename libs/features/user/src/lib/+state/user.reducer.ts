@@ -30,7 +30,10 @@ const userReducer = createReducer(
     userUid,
     userEmail
   })),
-  on(UserActions.loginFailure, (state, { error }) => ({ ...state, error }))
+  on(UserActions.loginFailure, (state, { error }) => ({ ...state, error })),
+  on(UserActions.logoutRequest, () => ({
+    ...initialState,
+  })),
 );
 
 export function reducer(state: UserState | undefined, action: Action) {

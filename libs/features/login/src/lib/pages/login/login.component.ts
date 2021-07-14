@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Theme } from '@griin/ui';
-import { UserFacade } from '../../+state/user.facade';
+import { UserFacade } from '@griin/features/user';
 import { mdiGoogle } from '@mdi/js';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'griin-login',
@@ -17,7 +18,9 @@ export class LoginComponent {
     password: new FormControl(''),
   });
 
-  constructor(private userFacade: UserFacade) {}
+  constructor(private userFacade: UserFacade, private auth: AngularFireAuth) {
+    this.auth.user.subscribe((user) => console.log(user));
+  }
 
   onFormSubmit() {
     const { email, password } = this.form.value;

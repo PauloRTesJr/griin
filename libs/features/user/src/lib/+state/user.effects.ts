@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, exhaustMap, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { LoginService } from '../services/login.service';
 
 import * as UserActions from './user.actions';
@@ -22,12 +22,31 @@ export class UserEffects {
     )
   );
 
-  loginSuccess$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(UserActions.loginSuccess),
-        tap(() => this.router.navigate(['dashboard']))
-      ),
+  loginSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(UserActions.loginSuccess),
+      tap(() => this.router.navigateByUrl('dashboard'))
+    ),
+    { dispatch: false }
+  );
+
+  logout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(UserActions.logoutRequest),
+      mergeMap(() =>
+        this.loginService.logout().pipe(
+          map(() => UserActions.logoutSuccess()),
+          catchError((error) => of(UserActions.logoutFailure(error.message)))
+        )
+      )
+    ),
+  );
+
+  logoutSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(UserActions.logoutSuccess),
+      tap(() => this.router.navigateByUrl('login'))
+    ),
     { dispatch: false }
   );
 }

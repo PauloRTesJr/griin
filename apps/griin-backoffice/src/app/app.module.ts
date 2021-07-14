@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { PERSISTENCE } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -29,7 +30,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
-  providers: [],
+  providers: [
+    { provide: PERSISTENCE, useValue: 'local' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

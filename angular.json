@@ -51,6 +51,31 @@
         }
       }
     },
+    "features-user": {
+      "projectType": "library",
+      "root": "libs/features/user",
+      "sourceRoot": "libs/features/user/src",
+      "prefix": "griin",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/features/user"],
+          "options": {
+            "jestConfig": "libs/features/user/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/features/user/src/**/*.ts",
+              "libs/features/user/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "griin-backoffice": {
       "projectType": "application",
       "root": "apps/griin-backoffice",

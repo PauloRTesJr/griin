@@ -5,13 +5,13 @@ import { from, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
-  constructor(private auth: AngularFireAuth) {}
+  constructor(private auth: AngularFireAuth) { }
 
   login(email: string, password: string): Observable<UserCredential> {
-    console.log(`trying login with email ${email} and password ${password}`);
     return from(this.auth.signInWithEmailAndPassword(email, password));
   }
-  logout() {
-    this.auth.signOut();
+  logout(): Observable<void> {
+    console.log('Logout service');
+    return from(this.auth.signOut());
   }
 }
