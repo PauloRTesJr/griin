@@ -35,7 +35,7 @@ export class UserEffects {
     () =>
       this.actions$.pipe(
         ofType(UserActions.loginSuccess),
-        tap(() => this.router.navigateByUrl('dashboard'))
+        tap(() => this.router.navigateByUrl('/'))
       ),
     { dispatch: false }
   );
@@ -44,11 +44,10 @@ export class UserEffects {
     () =>
       this.actions$.pipe(
         ofType(UserActions.logoutRequest),
-        tap(() => console.log('Effect logout')),
         mergeMap(() =>
           this.loginService.logout().pipe(
             tap(() => this.router.navigateByUrl('login')),
-            catchError((error) => of(console.log(error)))
+            catchError((error) => of(console.error(error)))
           )
         )
       ),

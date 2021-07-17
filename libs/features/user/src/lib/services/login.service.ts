@@ -11,7 +11,6 @@ export class LoginService {
     return from(this.auth.signInWithEmailAndPassword(email, password));
   }
   logout(): Observable<void> {
-    console.log('Logout service');
     if (!this.auth.currentUser) {
       return of();
     }

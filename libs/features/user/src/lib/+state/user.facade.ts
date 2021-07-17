@@ -12,14 +12,13 @@ export class UserFacade {
    */
   loaded$ = this.store.pipe(select(UserSelectors.getUserLoaded));
 
-  constructor(private readonly store: Store) { }
+  constructor(private readonly store: Store) {}
 
   loginUser(email: string, password: string) {
     this.store.dispatch(UserActions.loginRequest({ email, password }));
   }
 
   logout() {
-    console.log('Faz logout!');
     this.store.dispatch(UserActions.logoutRequest());
   }
 }
