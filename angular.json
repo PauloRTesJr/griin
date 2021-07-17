@@ -1,56 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "features-dashboard": {
-      "projectType": "library",
-      "root": "libs/features/dashboard",
-      "sourceRoot": "libs/features/dashboard/src",
-      "prefix": "griin",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/features/dashboard"],
-          "options": {
-            "jestConfig": "libs/features/dashboard/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/features/dashboard/src/**/*.ts",
-              "libs/features/dashboard/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "features-login": {
-      "projectType": "library",
-      "root": "libs/features/login",
-      "sourceRoot": "libs/features/login/src",
-      "prefix": "griin",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/features/login"],
-          "options": {
-            "jestConfig": "libs/features/login/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/features/login/src/**/*.ts",
-              "libs/features/login/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "features-user": {
       "projectType": "library",
       "root": "libs/features/user",

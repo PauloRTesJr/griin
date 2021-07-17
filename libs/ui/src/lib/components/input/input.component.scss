@@ -8,7 +8,7 @@
     &__label {
       position: absolute;
       left: 0;
-      top: 0;
+      top: 1rem;
       padding: calc(0.5rem * 0.75) calc(0.5rem * 0.5);
       margin: calc(0.5rem * 0.75 + 3px) calc(2rem * 0.5);
       white-space: nowrap;
@@ -17,7 +17,6 @@
       background: transparent;
       transition: transform 120ms ease-in;
       font-weight: bold;
-      line-height: 1.2;
     }
     &__field {
       box-sizing: border-box;
@@ -28,6 +27,7 @@
       color: black;
       background: transparent;
       border-radius: 4px;
+      outline: none;
 
       &:focus {
         border: 3px solid var(--selected-color);

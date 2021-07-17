@@ -27,4 +27,4 @@ import { UserModule } from '@griin/features/user';
   declarations: [DashboardComponent],
   providers: [DashboardFacade],
 })
-export class DashboardModule { }
+export class DashboardModule {}

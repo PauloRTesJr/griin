@@ -18,4 +18,4 @@ import { ReactiveFormsModule } from '@angular/forms';
     ]),
   ],
 })
-export class LoginModule { }
+export class LoginModule {}
