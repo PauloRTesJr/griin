@@ -18,9 +18,7 @@ export class LoginComponent {
     password: new FormControl(''),
   });
 
-  constructor(private userFacade: UserFacade, private auth: AngularFireAuth) {
-    this.auth.user.subscribe((user) => console.log(user));
-  }
+  constructor(private userFacade: UserFacade, private auth: AngularFireAuth) {}
 
   onFormSubmit() {
     const { email, password } = this.form.value;
