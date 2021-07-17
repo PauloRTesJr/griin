@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NotFoundComponent } from './modules/not-found/not-found.component';
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -30,9 +30,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
-  providers: [
-    { provide: PERSISTENCE, useValue: 'local' },
-  ],
+  providers: [{ provide: PERSISTENCE, useValue: 'local' }],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

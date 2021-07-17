@@ -5,7 +5,7 @@ import {
   redirectLoggedInTo,
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NotFoundComponent } from './modules/not-found/not-found.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToItems = () => redirectLoggedInTo(['dashboard']);
@@ -17,14 +17,16 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectLoggedInToItems },
     loadChildren: () =>
-      import('./pages/login/login.module').then((module) => module.LoginModule),
+      import('./modules/login/login.module').then(
+        (module) => module.LoginModule
+      ),
   },
   {
     path: 'dashboard',
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
     loadChildren: () =>
-      import('./pages/dashboard/dashboard.module').then(
+      import('./modules/dashboard/dashboard.module').then(
         (module) => module.DashboardModule
       ),
   },
