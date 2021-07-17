@@ -1,0 +1,20 @@
+.container {
+  &-closed {
+    background-color: white;
+    padding: 0.6rem;
+    border-radius: var(--border-radius-small);
+  }
+  &-opened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    color: var(--font-dark);
+    width: 100vw;
+    height: 50vh;
+    padding: 1.6rem;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+}

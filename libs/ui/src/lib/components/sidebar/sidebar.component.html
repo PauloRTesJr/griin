@@ -1,1 +1,18 @@
-<p>sidebar works!</p>
+<div *ngIf="!isOpen" class="container-closed" (click)="toggleSidebar()">
+  <griin-icon
+    color="var(--primary-color)"
+    [icon]="menuIcon"
+    size="2rem"
+  ></griin-icon>
+</div>
+<div *ngIf="isOpen" @slideDownUp class="container-opened">
+  <div class="close-container">
+    <griin-icon
+      (click)="toggleSidebar()"
+      [icon]="closeIcon"
+      size="2rem"
+      color="var(--primary-color)"
+    ></griin-icon>
+  </div>
+  Teste
+</div>

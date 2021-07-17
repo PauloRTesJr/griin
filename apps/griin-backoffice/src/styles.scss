@@ -10,3 +10,15 @@ html {
   font-family: 'Sen', sans-serif;
   font-size: 1rem;
 }
+
+:root {
+  --border-radius: 25px;
+  --border-radius-small: 10px;
+  --primary-color: #ea1d2c;
+  --secondary-color: #717171;
+  --background-color: #ffffff;
+  --container-background: #eeeeee;
+  --font-light: #ffffff;
+  --font-dark: #424242;
+  --shadow: 0 0.5rem 0.5rem #cccccc;
+}
