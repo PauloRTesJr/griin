@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Theme } from '@griin/ui';
+import { mdiAccountCircle } from '@mdi/js';
 
 @Component({
   selector: 'griin-base',
@@ -8,4 +9,5 @@ import { Theme } from '@griin/ui';
 })
 export class BaseComponent {
   theme = Theme;
+  userIcon = mdiAccountCircle;
 }
