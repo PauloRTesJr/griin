@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { DetailedButtonComponent } from './components/detailed-button/detailed-button.component';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule],
@@ -17,6 +18,7 @@ import { LogoComponent } from './components/logo/logo.component';
     SidebarComponent,
     TopbarComponent,
     LogoComponent,
+    DetailedButtonComponent,
   ],
   exports: [
     ButtonComponent,
@@ -25,6 +27,7 @@ import { LogoComponent } from './components/logo/logo.component';
     SidebarComponent,
     TopbarComponent,
     LogoComponent,
+    DetailedButtonComponent,
   ],
 })
 export class UiModule {}
