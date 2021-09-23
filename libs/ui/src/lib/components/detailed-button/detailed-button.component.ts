@@ -1,16 +1,21 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'griin-detailed-button',
   templateUrl: './detailed-button.component.html',
   styleUrls: ['./detailed-button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DetailedButtonComponent implements OnInit {
+export class DetailedButtonComponent {
+  @Input()
+  text!: string;
 
-  constructor() { }
+  @Input()
+  image!: string;
 
-  ngOnInit(): void {
-  }
+  @Input()
+  backgroundColor = '';
 
+  @Input()
+  color = '';
 }

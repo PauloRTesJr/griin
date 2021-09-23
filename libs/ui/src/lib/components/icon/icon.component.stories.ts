@@ -29,5 +29,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   icon: mdiVirusOutline,
   color: 'red',
-  size: 200,
+  size: '200',
 };

@@ -23,7 +23,8 @@ const Template: Story<DetailedButtonComponent> = (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  // text: 'Hamburguer',
-  // backgroundColor: '#DA291C',
-  // color: '#FFFFFF',
+  text: 'Hamburguer',
+  backgroundColor: '#DA291C',
+  color: '#FFFFFF',
+  image: 'https://via.placeholder.com/150',
 };
