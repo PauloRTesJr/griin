@@ -14,5 +14,14 @@
       color="var(--primary-color)"
     ></griin-icon>
   </div>
-  Teste
+  <div class="container-content">
+    <griin-detailed-button
+      *ngFor="let button of buttons"
+      [text]="button.title"
+      [image]="button.image"
+      [backgroundColor]="button.background"
+      [color]="button.color"
+    >
+    </griin-detailed-button>
+  </div>
 </div>

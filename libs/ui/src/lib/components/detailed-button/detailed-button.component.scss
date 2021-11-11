@@ -4,13 +4,17 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 120px;
   padding: 1rem;
   border-radius: 15px;
   border: none;
   transition: 0.25s ease;
   gap: 0.5rem;
+  word-break: break-word;
+  height: 100%;
   &:hover {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-4px);
   }
   &:active {
     opacity: 0.75;

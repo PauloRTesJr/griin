@@ -1,7 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { mdiMenu, mdiClose } from '@mdi/js';
-import { Theme } from '../../types';
+import { SidebarButton, Theme } from '@griin/types';
 
 @Component({
   selector: 'griin-sidebar',
@@ -23,6 +23,9 @@ import { Theme } from '../../types';
   ],
 })
 export class SidebarComponent {
+  @Input()
+  buttons!: SidebarButton[];
+
   menuIcon = mdiMenu;
   closeIcon = mdiClose;
   theme = Theme;

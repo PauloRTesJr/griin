@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@griin/features/user": ["libs/features/user/src/index.ts"],
+      "@griin/types": ["libs/types/src/index.ts"],
       "@griin/ui": ["libs/ui/src/index.ts"]
     }
   },

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Theme } from '@griin/ui';
+import { Theme } from '@griin/types';
 import { UserFacade } from '@griin/features/user';
 import { mdiGoogle } from '@mdi/js';
 import { AngularFireAuth } from '@angular/fire/auth';

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { UserCredential } from '@griin/ui';
 import { from, Observable, of } from 'rxjs';
+import { UserCredential } from '@griin/types';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {

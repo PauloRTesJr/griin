@@ -11,10 +11,19 @@
     background-color: white;
     color: var(--font-dark);
     width: 100vw;
-    height: 50vh;
+    max-height: 90vh;
     padding: 1.6rem;
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    overflow-y: auto;
+  }
+
+  &-content {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
   }
 }
